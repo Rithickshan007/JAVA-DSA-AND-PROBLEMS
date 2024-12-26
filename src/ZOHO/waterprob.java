@@ -31,7 +31,6 @@ class  WaterProb{
             res=res+(sec_max-a[i]);
         }
         System.out.println(res);
-
     }
 }
 

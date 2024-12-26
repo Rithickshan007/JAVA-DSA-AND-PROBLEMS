@@ -83,6 +83,43 @@ class Solution2{
         int target=9;
         Solution2 solution = new Solution2();
         int[] result = solution.twoSum(nums,target);
-        System.out.println(new String(Arrays.toString(result)));
+        System.out.println(Arrays.toString(result));
     }
 }
+
+//Problem 2825 Make String a Subsequence Using Cyclic Increments
+
+class Solution3 {
+    public boolean canMakeSubsequence(String str1, String str2) {
+        int m = str1.length();
+        int n = str2.length();
+
+
+        if (n > m) return false;
+
+        int fp = 0;
+        int sp = 0;
+
+        while (fp < m && sp < n) {
+            char currentChar = str1.charAt(fp);
+            char next = (char) (((currentChar - 'a' + 1) % 26) + 'a');
+
+            if (str2.charAt(sp) == currentChar || str2.charAt(sp) == next) {
+                sp++;
+            }
+            fp++;
+        }
+        return sp == n;
+    }
+    public static void main(String[] args) {
+        String str1="abc";
+        String str2="ad";
+        Solution3 solution3=new Solution3();
+        Boolean result=solution3.canMakeSubsequence(str1,str2);
+        System.out.println(result);
+    }
+}
+
+
+
+
