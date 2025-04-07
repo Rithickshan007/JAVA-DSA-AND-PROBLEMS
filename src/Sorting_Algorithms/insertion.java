@@ -8,7 +8,7 @@ class InsertionSort {
         int n = in.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = in.nextInt();  //{4,3,6,8,10,1}
+            arr[i] = in.nextInt();  //{3,4,1,2}
         }
 
         //Sorting using Insertion Sort

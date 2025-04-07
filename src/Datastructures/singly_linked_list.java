@@ -2,8 +2,8 @@
 
  package Datastructures;
 
-
-class Node1{
+//Structure of the Node in Singly Linked List
+ class Node1{
     int data;
     Node1 next;
     public Node1(int data)
