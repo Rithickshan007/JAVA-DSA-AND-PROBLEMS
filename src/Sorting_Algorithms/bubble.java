@@ -165,9 +165,28 @@ class BubbleAndBS {
     }
 }
 
+//Checking Duplicates
+class FindingDuplicates{
+    static boolean duplicates(int[] arr){
+        int len = arr.length;
+        for(int i=0;i<len;i++){
+            for(int j=i+1;j<len;j++){
+                if(arr[i]==arr[j]){
+//                    System.out.println("The Duplicate element found was: ");
+//                    System.out.println(arr[j]);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
-
-
+    public static void main(String[] args) {
+        int[] arr ={6,2,9,8,7};
+        boolean res=duplicates(arr);
+        System.out.println(res);
+    }
+}
 
 
 

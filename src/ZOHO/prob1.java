@@ -2,29 +2,30 @@ package ZOHO;
 
 import java.util.Scanner;
 import java.util.PriorityQueue;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 
-
-class Changing{
-    public static void main(String [] args){
+class Changing {
+    public static void main(String[] args) {
 //        String s="a11b4c5";
-        Scanner in=new Scanner(System.in);
-        String s=in.nextLine();
-        char[] ch=s.toCharArray();
-        int n=0,count=0;
-        for(int i=0;i<ch.length;i++){
-            if(Character.isDigit(ch[i])){
-                n=(n*10)+Integer.parseInt(String.valueOf(ch[i]));
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        char[] ch = s.toCharArray();
+        int n = 0, count = 0;
+        for (int i = 0; i < ch.length; i++) {
+            if (Character.isDigit(ch[i])) {
+                n = (n * 10) + Integer.parseInt(String.valueOf(ch[i]));
                 count++;
-                for(int j=0;j<n-1;j++){
-                    System.out.print(ch[i-count]);
+                for (int j = 0; j < n - 1; j++) {
+                    System.out.print(ch[i - count]);
                 }
-            }
-            else{
+            } else {
                 System.out.print(ch[i]);
-                count=0;
-                n=0;
+                count = 0;
+                n = 0;
             }
         }
 
@@ -42,7 +43,7 @@ class MinCostGoldWires1 {
         System.out.println(minCost(wires));
     }
 
-     static int minCost(int[] wires) {
+    static int minCost(int[] wires) {
 
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int wire : wires) {
@@ -59,7 +60,6 @@ class MinCostGoldWires1 {
         return cost;
     }
 }
-
 
 
 class MatrixFormation {
@@ -149,7 +149,6 @@ class Rotation180 {
 }
 
 
-
 class MinCostGoldWires2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -209,16 +208,12 @@ class MinCostGoldWires2 {
 }
 
 
-class PatternProb1
-{
-    public static void main(String[] args){
-        int n=5;
-        for(int row=n;row>=1;row--)
-        {
-            for(int col=n;col>=1;col--)
-            {
-                for(int k=1;k<=row;k++)
-                {
+class PatternProb1 {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int row = n; row >= 1; row--) {
+            for (int col = n; col >= 1; col--) {
+                for (int k = 1; k <= row; k++) {
                     System.out.print(col);
                 }
 
@@ -254,8 +249,6 @@ class VerticalPrint {
         }
     }
 }
-
-
 
 
 class VerticalStringWithReverse {
@@ -300,7 +293,6 @@ class VerticalStringWithReverse {
 }
 
 
-
 class MaxValue {
 
     public static int computeMaxValue(int num) {
@@ -333,45 +325,42 @@ class MaxValue {
 }
 
 
-
 class CharacterMultiplier {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         String str = "";
         String num = "";
-        if((int)s.charAt(0)>64)
-        { for (int i = 0; i < s.length(); i++) {
-            if ((int)(s.charAt(i)) >= 65 && (int)(s.charAt(i)) <= 122) {
-                str += s.charAt(i);
-            } else {
+        if ((int) s.charAt(0) > 64) {
+            for (int i = 0; i < s.length(); i++) {
+                if ((int) (s.charAt(i)) >= 65 && (int) (s.charAt(i)) <= 122) {
+                    str += s.charAt(i);
+                } else {
 
-                num += s.charAt(i);
-                if  (i==s.length()-1||(int)(s.charAt(i + 1)) >= 65 && (int)(s.charAt(i + 1)) <= 122)
-                {
-                    int n = Integer.parseInt(num);
-                    for (int j = 0; j < n; j++) {
-                        System.out.print(str);
+                    num += s.charAt(i);
+                    if (i == s.length() - 1 || (int) (s.charAt(i + 1)) >= 65 && (int) (s.charAt(i + 1)) <= 122) {
+                        int n = Integer.parseInt(num);
+                        for (int j = 0; j < n; j++) {
+                            System.out.print(str);
+                        }
+
+                        str = "";
+                        num = "";
                     }
 
-                    str = "";
-                    num = "";
+
                 }
 
-
             }
-
-        }}
-        else{
+        } else {
             for (int i = 0; i < s.length(); i++) {
-                if ((int)(s.charAt(i)) <= 65 ) {
+                if ((int) (s.charAt(i)) <= 65) {
                     num += s.charAt(i);
 
                 } else {
                     str += s.charAt(i);
 
-                    if  (i==s.length()-1||(int)(s.charAt(i + 1)) <=65)
-                    {
+                    if (i == s.length() - 1 || (int) (s.charAt(i + 1)) <= 65) {
                         int n = Integer.parseInt(num);
                         for (int j = 0; j < n; j++) {
                             System.out.print(str);
@@ -390,21 +379,161 @@ class CharacterMultiplier {
     }
 }
 
-class MaxSubArray{
+class MaxSubArray {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int n=in.nextInt();
-        int[]arr=new int[n];
-        for(int i=0; i<n;i++){
-            arr[i]= in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
         }
-        int currsum=arr[0];
-        int maxsum=arr[0];
-        for(int i=1;i<n;i++){
-            currsum=Math.max(arr[i],currsum+arr[i] );
-            maxsum=Math.max(maxsum,currsum);
+        int currsum = arr[0];
+        int maxsum = arr[0];
+        for (int i = 1; i < n; i++) {
+            currsum = Math.max(arr[i], currsum + arr[i]);
+            maxsum = Math.max(maxsum, currsum);
         }
         System.out.println(maxsum);
+    }
+}
+
+
+
+class Graph {
+    int numCities;
+    List<Edge>[] adjList;
+
+    public Graph(int numCities) {
+        this.numCities = numCities;
+        adjList = new ArrayList[numCities];
+        for (int i = 0; i < numCities; i++) {
+            adjList[i] = new ArrayList<>();
+        }
+    }
+
+    public void addEdge(int from, int to, int weight) {
+        adjList[from].add(new Edge(to, weight));
+        adjList[to].add(new Edge(from, weight)); // Since it's an undirected graph
+    }
+
+    public void printGraph() {
+        for (int i = 0; i < numCities; i++) {
+            System.out.print("City " + i + " -> ");
+            for (Edge edge : adjList[i]) {
+                System.out.print("(City " + edge.to + ", Distance: " + edge.weight + ") ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Edge {
+    int to;
+    int weight;
+
+    public Edge(int to, int weight) {
+        this.to = to;
+        this.weight = weight;
+    }
+}
+
+class HillClimbingTSP {
+
+    // Function to calculate the total distance of a tour
+    private static int calculateDistance(List<Integer> tour, int[][] distanceMatrix) {
+        int totalDistance = 0;
+        System.out.println("Tour: " + tour);
+
+        for (int i = 0; i < tour.size() - 1; i++) {
+            int distance = distanceMatrix[tour.get(i)][tour.get(i + 1)];
+            totalDistance += distance;
+            System.out.println("Distance from City " + tour.get(i) + " to City " + tour.get(i + 1) + ": " + distance);
+        }
+
+        // Add distance to return to the starting city
+        int returnDistance = distanceMatrix[tour.get(tour.size() - 1)][tour.get(0)];
+        totalDistance += returnDistance;
+        System.out.println("Distance from City " + tour.get(tour.size() - 1) + " to City " + tour.get(0) + " (return): " + returnDistance);
+        System.out.println("Total Distance: " + totalDistance + "\n");
+
+        return totalDistance;
+    }
+
+    // Function to generate a neighboring solution by swapping two cities
+    private static List<Integer> generateNeighbor(List<Integer> tour) {
+        List<Integer> newTour = new ArrayList<>(tour);
+        Random random = new Random();
+        int i = random.nextInt(tour.size());
+        int j = random.nextInt(tour.size());
+
+        // Ensure two different indices are selected
+        while (i == j) {
+            j = random.nextInt(tour.size());
+        }
+
+        // Swap the two cities
+        Collections.swap(newTour, i, j);
+        return newTour;
+    }
+
+    // Hill climbing search for TSP
+    private static List<Integer> hillClimbingTSP(int[][] distanceMatrix) {
+        int numCities = distanceMatrix.length;
+        Random random = new Random();
+
+        // Generate a random initial solution
+        List<Integer> currentSolution = new ArrayList<>();
+        for (int i = 0; i < numCities; i++) {
+            currentSolution.add(i);
+        }
+        Collections.shuffle(currentSolution);
+
+        int currentDistance = calculateDistance(currentSolution, distanceMatrix);
+        boolean improved = true;
+
+        while (improved) {
+            improved = false;
+
+            for (int i = 0; i < 100; i++) { // Try multiple neighbors
+                List<Integer> neighborSolution = generateNeighbor(currentSolution);
+                int neighborDistance = calculateDistance(neighborSolution, distanceMatrix);
+
+                if (neighborDistance < currentDistance) {
+                    currentSolution = neighborSolution;
+                    currentDistance = neighborDistance;
+                    improved = true;
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Best Tour: " + currentSolution);
+        System.out.println("Best Distance: " + currentDistance);
+        return currentSolution;
+    }
+
+    public static void main(String[] args) {
+        // Example distance matrix
+        int[][] distanceMatrix = {
+                {0, 10, 15},
+                {10, 0, 20},
+                {15, 20, 0}
+        };
+
+        // Create graph representation
+        Graph graph = new Graph(distanceMatrix.length);
+        for (int i = 0; i < distanceMatrix.length; i++) {
+            for (int j = i + 1; j < distanceMatrix.length; j++) {
+                graph.addEdge(i, j, distanceMatrix[i][j]);
+            }
+        }
+
+        // Print the graph
+        System.out.println("Graph Representation:");
+        graph.printGraph();
+
+        // Perform Hill Climbing TSP
+        hillClimbingTSP(distanceMatrix);
     }
 }
 
