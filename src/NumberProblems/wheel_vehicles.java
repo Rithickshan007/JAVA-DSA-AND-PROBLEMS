@@ -1,5 +1,5 @@
 /*
-Problem Statement: Given the number of tyres and vehicles - How many two-wheelers
+Problem Statement: Given the number of tires and vehicles - How many two-wheelers
 and four-wheelers can be formed...
 */
 package NumberProblems;
